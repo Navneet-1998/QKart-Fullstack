@@ -201,7 +201,7 @@ const Login = () => {
 {isloading ? <><CircularProgress size={20} /></> : <><span>LOGIN TO QKART</span></> }
 </Button>
 <p className="secondary-action">
- Don't have an account?{" "}
+Don't have an account? Register now{" "}
  <Link to="/register"  >
             Register now
             </Link>
@@ -214,4 +214,3 @@ const Login = () => {
 };
 
 export default Login;
-

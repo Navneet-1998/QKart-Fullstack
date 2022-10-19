@@ -6,7 +6,7 @@ import React from "react";
 import "./Header.css";
 import { useHistory } from "react-router-dom";
 
-const Header = ({ children, hasHiddenAuthButtons }) => {
+const Header = ({ login, children, hasHiddenAuthButtons }) => {
   const history = useHistory();
   const check = (value) => {
     if(value === "logout"){
@@ -21,6 +21,8 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
         <Box className="header-title">
             <img src="logo_light.svg" alt="QKart-icon"></img>
         </Box>
+       
+       {children}
 
       { hasHiddenAuthButtons ? <><Button
           className="explore-button"
@@ -30,12 +32,12 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
           Back to explore
         </Button></> : <Stack direction="row" spacing={2}>
           {
-          children ? <><Button
-          className="button"
+          login ? <><Button
+          className="explore-button"
           variant="text"
           onClick={() => check("login")}
         >
-        LOGIN
+        Login to QKart
         </Button>
         <Button
           className="button"
@@ -44,9 +46,9 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
         >
          REGISTER
         </Button></> : <>
-       <Avatar src="avatar.png" alt={window.localStorage.username || "Profile"}/><span style={{width:"40px", position:"relative",top:"8px"}}>{window.localStorage.username}</span>
+       <Avatar src="avatar.png" alt={window.localStorage.username || "Profile"}/><span style={{width:"40px", position:"relative",top:"9px"}}>{window.localStorage.username}</span>
         <Button
-          className="button"
+          className="explore-button"
           variant="text"
           onClick={() => check("logout")}
         >
@@ -58,6 +60,3 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
 };
 
 export default Header;
-
-
-{/* <Avatar src="avatar.png" alt="User avatar"/><span style={{width:"50px"}}>{children.buttonOne}</span> */}
