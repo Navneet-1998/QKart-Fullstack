@@ -46,7 +46,7 @@ const Header = ({ login, children, hasHiddenAuthButtons }) => {
         >
          REGISTER
         </Button></> : <>
-       <Avatar src="avatar.png" alt={window.localStorage.username || "Profile"}/><span style={{width:"40px", position:"relative",top:"9px"}}>{window.localStorage.username}</span>
+       <Avatar src="avatar.png" alt={window.localStorage.username || "Profile"}/><span style={{width:"40px", position:"relative",top:"9px", left:"-9px"}}>{window.localStorage.username}</span>
         <Button
           className="explore-button"
           variant="text"

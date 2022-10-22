@@ -8,11 +8,10 @@ import {
   Rating,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, {useState}from "react";
 import "./ProductCard.css";
 
 const ProductCard = ({ product, handleAddToCart }) => {
-  console.log(product)
   return (
     <Card className="card">
       <CardMedia
@@ -36,6 +35,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
           variant="contained"
           size="large"
           startIcon={<AddShoppingCartOutlined />}
+          onClick={handleAddToCart}
         >
          ADD TO CART
        </Button>

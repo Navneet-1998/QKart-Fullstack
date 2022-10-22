@@ -52,6 +52,16 @@
   display: none !important;
 }
 
+
+.cart-mobile {
+  display: block !important;
+}
+
+.cart-desktop {
+  display: none !important;
+}
+
+
 @media screen and (min-width: 768px) {
   .hero {
     justify-content: flex-end;
@@ -69,4 +79,15 @@
   .search-desktop {
     display: block !important;
   }
+}
+
+
+@media screen and (min-width: 425px) {
+  .cart-mobile {
+    display: none !important;
+  }
+  .cart-desktop {
+    display: block !important;
+  }
+
 }
