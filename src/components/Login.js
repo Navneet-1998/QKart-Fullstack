@@ -56,28 +56,6 @@ const Login = () => {
    *
    */
   const login = async (formData) => {
-  //   if(validateInput(data)){
-  //     setloading(true)
-  //   try{
-  //     let res = await axios.post(config.endpoint+"/auth/login", {username:loginData.username,password:loginData.password})
-  //     setloading(false)
-  //     if(res.response && res.response.status === 201){
-  //       setloading(false)
-  //       enqueueSnackbar("Logged in successfully",{variant: "success" })
-  //       console.log(res.response)
-  //     }
-  //   }
-  //   catch (e) {
-  //     setloading(false)
-  //       if(e.response && e.response.status === 400 ){
-  //         enqueueSnackbar(e.response.data.message,{variant: "error" })
-  //         console.log(e.response)
-  //       }else{
-  //         console.log(e.response)
-  //         enqueueSnackbar("Something went wrong, Check that the backend is running, reachable and return valid JSON.",{ variant: "error" })
-  //       }
-  //   }
-  // }
 
   if(validateInput(data)){
     setloading(true)

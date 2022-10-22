@@ -247,43 +247,6 @@ const Cart = ({
           </Box>
         </Box>
 
-        {/* {hasCheckoutButton ? ( */}
-          {/* <Box display="flex" justifyContent="flex-end" className="cart-footer">
-            <Button
-              color="primary"
-              variant="contained"
-              startIcon={<ShoppingCart />}
-              className="checkout-btn"
-              onClick={routeToCheckout}
-            >
-              Checkout
-            </Button>
-          </Box>
-        {/* ) : <></>} */}
-        {/* CRIO_SOLUTION_END_MODULE_CART */}
-      {/* </Box>  */}
-      {/* CRIO_SOLUTION_START_MODULE_CHECKOUT */}
-      {/* {isReadOnly && (
-        <Box className="cart" padding="1rem">
-          <h2>Order Details</h2>
-          <Box className="cart-row">
-            <p>Products</p>
-            <p>{getTotalItems(items)}</p>
-          </Box>
-          <Box className="cart-row">
-            <p>Subtotal</p>
-            <p>${getTotalCartValue(items)}</p>
-          </Box>
-          <Box className="cart-row">
-            <p>Shipping Charges</p>
-            <p>$0</p>
-          </Box>
-          <Box className="cart-row" fontSize="1.25rem" fontWeight="700">
-            <p>Total</p>
-            <p>${getTotalCartValue(items)}</p>
-          </Box>
-        </Box>
-      )} */}
         {hasCheckoutButton && (
           <Box display="flex" justifyContent="flex-end" className="cart-footer">
             <Button

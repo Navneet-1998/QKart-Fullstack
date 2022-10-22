@@ -119,24 +119,6 @@ async function addToCart(token,items,products,productId,qty,option = {preventDup
    * }
    */
   const performAPICall = async () => {
-    // setloading(true)
-    // await axios.get(`${config.endpoint}/products`)
-    // .then(function (response){
-    //   setloading(false)
-    //   updateProdeuctsData(response.data)
-    //   updateFiltered(response.data)
-    //   return response.data;
-    // })
-    // .catch(function(error){
-    //   if(error.response && error.response.status === 500){
-    //   setloading(false)
-    //     console.log(error.response)
-    //     enqueueSnackbar(error.repsonse.data.message, { variant: "error" })
-    //     return null;
-    //   }else{
-    //     enqueueSnackbar("Could not fetch products. Check that the backend is running, reachable and return the valid JSON", { variant: "error" })
-    //   }
-    // })
     setloading(true)
 
     try {
