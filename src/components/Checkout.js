@@ -6,7 +6,6 @@ import {
   Stack,
   TextField,
   Typography,
-  Radio,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
@@ -14,7 +13,6 @@ import { useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { config } from "../App";
-import Alert from '@mui/material/Alert';
 import Cart, { getTotalCartValue, generateCartItemsFrom } from "./Cart";
 import "./Checkout.css";
 import Footer from "./Footer";
