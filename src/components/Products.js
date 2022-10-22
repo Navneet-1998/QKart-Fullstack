@@ -357,10 +357,10 @@ const updateCart = (cartData,products) => {
        {token ? (
         <Grid item  style={{ width: "900px",backgroundColor:"#E9F5E1"}} xs={12} sm={3}>
         <Cart 
-              hasCheckboxButton
               products={productsData}
               items={items}
               handleQuantity={addToCart}
+              hasCheckoutButton="true"
               />
        </Grid> ) : null}
        </Grid>
@@ -442,71 +442,3 @@ const updateCart = (cartData,products) => {
 };
 
 export default Products;
-
-
-
-   
-       
-// <Grid classNmae="cart-mobile" container > 
-// <Grid item>
-// <TextField fullWidth className="search-mobile"
-//   size="small" 
-//   InputProps={{ 
-//      endAdornment:(
-//         <InputAdornment position="end">
-//           <Search color="primary" />
-//           </InputAdornment>
-//           ),
-//           }}
-//           placeholder="Search for items/categories"
-//           name="search"
-//           onChange={(e) => debounceSearch(e,debounce)}
-//           /> 
-//  <Grid container>
-//    <Grid item className="product-grid">
-//      <Box className="hero">
-//        <p className="hero-heading">
-//          India’s <span className="hero-highlight">FASTEST DELIVERY</span>{" "}
-//          to your door step
-//        </p>
-//      </Box>
-//    </Grid>
-//      {isloading ? 
-//      <Box className="loading">
-//       <Box><CircularProgress /></Box>
-//       <Box><p>Loading Products...</p></Box>
-//       </Box> : (
-//         <Grid container marginY="1rem" paddingX="1rem" spacing={2}>
-//           {filtered.length ? (filtered.map((product) => (
-//             <Grid item xs={6} md={3} key={product._id}>
-//               <ProductCard
-//               product={product}
-
-//               // handleAddToCart={async () => {
-//               //   await addToCard(
-//               //     token,
-//               //     item,
-//               //     productsData,
-//               //     product._id,
-//               //     1,
-//               //     {
-//               //       preventDuplicate: true
-//               //     }
-//               //   );
-//               // }}
-//               />
-//             </Grid>
-//           ))) : (<><Box className="loading">
-//             <Box><SentimentDissatisfied /></Box>
-//           <Box><p>No products found</p></Box>
-//           </Box></>)}
-//         </Grid>
-
-//       )
-//     }
-//   </Grid>
-//  </Grid>
-//   <Grid item  style={{width:"900px", backgroundColor:"#E9F5E1"}}  >
-//   <Cart item={item} />
-//  </Grid>
-//  </Grid>

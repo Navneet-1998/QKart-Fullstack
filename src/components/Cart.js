@@ -97,6 +97,8 @@ export const getTotalItems = (items = []) => {
  * @param {Function} handleDelete
  *    Handler function which reduces the quantity of a product in cart by 1
  * 
+ * @param {Boolean} isReadOnly
+ *    If product quantity on cart is to be displayed as read only without the + - options to change quantity
  * 
  */
 const ItemQuantity = ({
@@ -135,13 +137,15 @@ const ItemQuantity = ({
  * @param {Function} handleDelete
  *    Current quantity of product in cart
  * 
+ * @param {Boolean} isReadOnly
+ *    If product quantity on cart is to be displayed as read only without the + - options to change quantity
  * 
  */
 const Cart = ({
   products,
   items = [],
   handleQuantity,
-  hasCheckoutButton,
+  hasCheckoutButton = false,
   isReadOnly = false,
 }) => {
   const token = localStorage.getItem("token");
@@ -244,7 +248,7 @@ const Cart = ({
         </Box>
 
         {/* {hasCheckoutButton ? ( */}
-          <Box display="flex" justifyContent="flex-end" className="cart-footer">
+          {/* <Box display="flex" justifyContent="flex-end" className="cart-footer">
             <Button
               color="primary"
               variant="contained"
@@ -257,7 +261,7 @@ const Cart = ({
           </Box>
         {/* ) : <></>} */}
         {/* CRIO_SOLUTION_END_MODULE_CART */}
-      </Box>
+      {/* </Box>  */}
       {/* CRIO_SOLUTION_START_MODULE_CHECKOUT */}
       {/* {isReadOnly && (
         <Box className="cart" padding="1rem">
@@ -280,13 +284,45 @@ const Cart = ({
           </Box>
         </Box>
       )} */}
+        {hasCheckoutButton && (
+          <Box display="flex" justifyContent="flex-end" className="cart-footer">
+            <Button
+              color="primary"
+              variant="contained"
+              startIcon={<ShoppingCart />}
+              className="checkout-btn"
+              onClick={routeToCheckout}
+            >
+              Checkout
+            </Button>
+          </Box>
+        )}
+        {/* CRIO_SOLUTION_END_MODULE_CART */}
+      </Box>
+      {/* CRIO_SOLUTION_START_MODULE_CHECKOUT */}
+      {isReadOnly && (
+        <Box className="cart" padding="1rem">
+          <h2>Order Details</h2>
+          <Box className="cart-row">
+            <p>Products</p>
+            <p>{getTotalItems(items)}</p>
+          </Box>
+          <Box className="cart-row">
+            <p>Subtotal</p>
+            <p>${getTotalCartValue(items)}</p>
+          </Box>
+          <Box className="cart-row">
+            <p>Shipping Charges</p>
+            <p>$0</p>
+          </Box>
+          <Box className="cart-row" fontSize="1.25rem" fontWeight="700">
+            <p>Total</p>
+            <p>${getTotalCartValue(items)}</p>
+          </Box>
+        </Box>
+      )}
     </>
   );
 };
 
 export default Cart;
-
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlciIsImlhdCI6MTY2NjQwMjQwMSwiZXhwIjoxNjY2NDI0MDAxfQ.e9O7uz8bY4Yxwdd26Su07bLLRuMX3uBLzFMWFgcOms0
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlciIsImlhdCI6MTY2NjQxMjgzNSwiZXhwIjoxNjY2NDM0NDM1fQ.9WXzks7kC8A7CpVlln6XlLkTvK7d71LExMC9FscnH1I
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1heWFuayIsImlhdCI6MTY2NjQyMTQzMSwiZXhwIjoxNjY2NDQzMDMxfQ.TiqmITiv4eHUqmxaRFhWk0onXyZXZfvkA7PEt93AYvk
