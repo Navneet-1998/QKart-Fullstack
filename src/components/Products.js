@@ -5,6 +5,7 @@ import {
   InputAdornment,
   TextField,
 } from "@mui/material";
+
 import { Box } from "@mui/system";
 import axios from "axios";
 import { useSnackbar } from "notistack";
@@ -33,21 +34,34 @@ useEffect(() => {
     updateLogin(false)
   }
 },[login])
-// const check = () => {
+// const check = () => ˆß
+
+
 //     window.localStorage.clear();
 //     window.location.reload()
 // }
+
 async function addToCart(token,items,products,productId,qty,option = {preventDuplicate:false}){
+  
+  
   if(!token){
-    enqueueSnackbar("Please login to add to cart", {variant:"warning"})
-    return;
+    // enqueueSnackbar("Please login to add to cart", {variant:"warning"})
+    enqueueSnackbar(
+      "Please login to add to cart",
+      {
+        variant: 'warning',
+      }
+    )
+    return ;
   }
+
+  
   if(option.preventDuplicate && items.find(item => item.productId === productId)){
     enqueueSnackbar(
       'Item already in cart. Use the cart sidebar to update quantity or remove item.',
       {
         variant: 'warning',
-      },
+      }
     )
     return;
   }
@@ -122,7 +136,7 @@ async function addToCart(token,items,products,productId,qty,option = {preventDup
     setloading(true)
 
     try {
-      const response = await axios.get(`${config.endpoint}/products`)
+      const response = await axios.get(`${config.endpoint}/products` )
 
       setloading(false)
       updateProdeuctsData(response.data)
@@ -180,9 +194,7 @@ async function addToCart(token,items,products,productId,qty,option = {preventDup
     const onLoadHandler = async () => {
       const prd = await performAPICall();
       const cartData = await fetchCart(token);
-      console.log(prd)
       const cartDetails = await generateCartItemsFrom(cartData, prd)
-      console.log(cartDetails)
       updateItems(cartDetails)
     }
     onLoadHandler();
@@ -218,7 +230,6 @@ async function addToCart(token,items,products,productId,qty,option = {preventDup
       }
       else if(error.response && error.response.status === 500){
       setloading(false)
-        console.log(error.response)
         enqueueSnackbar(error.repsonse.data.message, { variant: "error" })
         return null;
       }else{

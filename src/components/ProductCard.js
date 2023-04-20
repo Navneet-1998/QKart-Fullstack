@@ -8,10 +8,22 @@ import {
   Rating,
   Typography,
 } from "@mui/material";
+import { useSnackbar } from "notistack";
 import React from "react";
 import "./ProductCard.css";
 
 const ProductCard = ({ product, handleAddToCart }) => {
+  const { enqueueSnackbar } = useSnackbar();
+  const checker = () => {
+      enqueueSnackbar(
+        "Please login to add to cart",
+        {
+          variant: 'warning',
+        }
+      )
+      return ;
+  }
+
   return (
     <Card className="card">
       <CardMedia
@@ -35,7 +47,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
           variant="contained"
           size="large"
           startIcon={<AddShoppingCartOutlined />}
-          onClick={handleAddToCart}
+          onClick={(handleAddToCart ?  handleAddToCart : checker)}
         >
          ADD TO CART
        </Button>

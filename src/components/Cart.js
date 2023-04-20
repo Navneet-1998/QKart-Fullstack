@@ -48,7 +48,6 @@ import "./Cart.css";
  *
  */
 export const generateCartItemsFrom = (cartData, productsData) => {
-  console.log(productsData)
   if(!cartData) return;
   const nextCart = cartData.map((item) => ({
     ...item,
