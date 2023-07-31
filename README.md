@@ -1,6 +1,6 @@
 # QKart-Fullstack
 
-deployed on netlify :- https://basic-x-board.netlify.app/](https://qkart-frontend-updated.netlify.app/
+deployed on netlify :-https://qkart-frontend-updated.netlify.app/
 
 QKart is an e-commerce application offering a variety of products for customers to choose from. 
 
